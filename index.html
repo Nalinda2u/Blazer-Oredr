@@ -2,14 +2,75 @@
 <html lang="en">
 <head>
 
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suit Up Rentals Chat</title>
 
-	createChat({
-		webhookUrl: 'https://bot.wabybixai.com/webhook/48450da2-7c75-4bd2-97f6-36e83b051ed3/chat'
-	});
-</script>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --chat--color-primary: #0b1b63;
+      --chat--color-primary-shade-50: #091652;
+      --chat--color-primary-shade-100: #071143;
+      --chat--color-secondary: #18c3b7;
+      --chat--color-secondary-shade-50: #14a79c;
+      --chat--color-white: #ffffff;
+      --chat--color-light: #f5f7fb;
+      --chat--color-light-shade-50: #e9edf5;
+      --chat--color-light-shade-100: #d8deea;
+      --chat--color-medium: #c8cfdb;
+      --chat--color-dark: #101330;
+
+      --chat--window--width: 420px;
+      --chat--window--height: 720px;
+      --chat--border-radius: 14px;
+
+      --chat--header--background: #0b1b63;
+      --chat--header--color: #ffffff;
+      --chat--heading--font-size: 2rem;
+
+      --chat--message--bot--background: #ffffff;
+      --chat--message--bot--color: #101330;
+      --chat--message--user--background: #18c3b7;
+      --chat--message--user--color: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f4f6fb;
+    }
+  </style>
+</head>
+<body>
+  <div id="n8n-chat"></div>
+
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://bot.wabybixai.com/webhook/48450da2-7c75-4bd2-97f6-36e83b051ed3/chat',
+      target: '#n8n-chat',
+      mode: 'window',
+      showWelcomeScreen: true,
+      loadPreviousSession: true,
+      defaultLanguage: 'en',
+      initialMessages: [
+        'Hi there! 👋',
+        'Hello! I am Wabybixi. How can I assist you today?'
+      ],
+      i18n: {
+        en: {
+          title: 'Suit Up Rentals 👔',
+          subtitle: 'Start a chat. We are here to help you 24/7.',
+          footer: '',
+          getStarted: 'Start Chat',
+          inputPlaceholder: 'Type your message...'
+        }
+      }
+    });
+  </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
